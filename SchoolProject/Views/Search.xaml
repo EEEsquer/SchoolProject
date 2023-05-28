@@ -1,0 +1,78 @@
+﻿<Page x:Class="SchoolProject.Search"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SchoolProject"
+      xmlns:control="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Background="White"
+      Title="Search">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.ColumnSpan="10"
+            Orientation="Horizontal"
+            VerticalAlignment="Center">
+            <TextBlock
+                Text="Search patient:"
+                FontSize="15"
+                Foreground="Blue"/>
+            <control:AutoCompleteBox 
+                Margin="10,0,0,0"
+                Placeholder="Write patient name here"
+                Width="300"
+                x:Name="TxtAutoComplete"/>
+        </StackPanel>
+
+        <DataGrid
+            Grid.Row="2"
+            Grid.RowSpan="9"
+            Grid.Column="1"
+            Grid.ColumnSpan="10"
+            CanUserAddRows="False"
+            CanUserDeleteRows="False"
+            AutoGenerateColumns="False"
+            VerticalScrollBarVisibility="Auto"
+            HorizontalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="First name" Binding="{Binding q}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Last name" Binding="{Binding q}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Gender" Binding="{Binding q}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Date of birth" Binding="{Binding q}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Email" Binding="{Binding q}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
